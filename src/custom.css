@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+.signup-div{
+    position: relative;
+    width: 80%;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+.site-layout-background {
+  background: #fff;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .heading h1 {
+    
+    padding: 0.2rem 1.2rem;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    background-color: #fdcb6e;
+    font-size: 1.5rem;
+  }
+
+  .post-div{
+    border-radius: 5px;
+    border: 1px solid burlywood;
+  }
