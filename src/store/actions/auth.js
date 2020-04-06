@@ -66,7 +66,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart);
-        axios.post('https://shuvo-blog.herokuapp.com/registration/', {
+        axios.post('https://shuvo-blog.herokuapp.com/rest-auth/registration/', {
             username: username,
             email: email,
             password1: password1,

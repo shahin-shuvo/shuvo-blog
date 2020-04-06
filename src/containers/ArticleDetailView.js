@@ -13,7 +13,7 @@ class ArticleDetail extends React.Component {
 
     componentDidMount() {
         const articleID = this.props.match.params.articleID;
-        axios.get(`https://shuvo-portal.herokuapp.com/api/${articleID}/`)
+        axios.get(`https://shuvo-blog.herokuapp.com/api/${articleID}/`)
             .then(res => {
                 this.setState({
                     article: res.data
@@ -25,6 +25,8 @@ class ArticleDetail extends React.Component {
     handleDelete = (event) => {
         const articleID = this.props.match.params.articleID;
         axios.delete(`https://shuvo-blog.herokuapp.com/api/${articleID}/`)
+        this.props.history.push('/')
+        window.location.reload(false)
 
     }
     render() {

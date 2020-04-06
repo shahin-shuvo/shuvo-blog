@@ -54,10 +54,8 @@ class RegistrationForm extends React.Component {
                 event.target.password2.value
 
             )
-
-            console.log(event.target.username.value, event.target.email.value, event.target.password1.value, event.target.password2.value);
             this.props.history.push('/')
-            
+
         }
 
 
@@ -135,7 +133,7 @@ class RegistrationForm extends React.Component {
                         rules={[
                             {
                                 required: true,
-                                message: 'Minimum 8 character !',
+                                message: 'Minimum 9 character !At least 2 uppercase, 1 lowercase, 2 digits!',
                                 min: 8,
 
 
@@ -151,9 +149,9 @@ class RegistrationForm extends React.Component {
                             name="password1"
                             onChange={this.handlePassword1Change}
                             value={this.state.password1}
-                            pattern="^(?=(?:.*?[A-Z]){2})(?=.*?[a-z])(?=(?:.*?[0-9]){2}).*$"
+                            pattern="^(?=.{9,}$)(?=(?:.*?[A-Z]){2})(?=.*?[a-z])(?=(?:.*?[0-9]){2}).*$"
 
-                            title="At least 2 uppercase, 1 lowercase, 2 digits!"
+                            title="Minimum 9 character !At least 2 uppercase, 1 lowercase, 2 digits!"
                         />
 
                     </Form.Item>
