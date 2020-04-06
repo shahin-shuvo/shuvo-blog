@@ -57,7 +57,7 @@ class RegistrationForm extends React.Component {
 
             console.log(event.target.username.value, event.target.email.value, event.target.password1.value, event.target.password2.value);
             this.props.history.push('/')
-            window.location.reload(true)
+            
         }
 
 
@@ -202,7 +202,7 @@ class RegistrationForm extends React.Component {
                     </Form.Item>
 
                 </Form>
-            </div >
+            </div>
         );
     }
 };
