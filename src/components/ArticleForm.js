@@ -15,30 +15,30 @@ class ArticleForm extends React.Component {
             userToken: props.article.userToken,
             postID: props.article.userToken + props.article.postID
         };
-        
+
 
     }
-    
+
     handleInputChange = (event) => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
     }
     initialize1 = () => {
-        
+
         console.log(this.title)
-       
+
     }
     initialize2 = () => {
-       
+
         this.setState({ content: this.props.article.content });
     }
 
 
     handleFormSubmit = (event, requestType, articleID) => {
-       
+
         switch (requestType) {
             case 'post':
-                return axios.post('https://shuvo-portal.herokuapp.com/api/', {
+                return axios.post('https://shuvo-blog.herokuapp.com/api/', {
                     title: this.state.title,
                     content: this.state.content,
                     userName: this.state.userName,
@@ -49,26 +49,26 @@ class ArticleForm extends React.Component {
 
 
             case 'put':
-                return axios.put(`https://shuvo-portal.herokuapp.com/api/${articleID}/`, {
+                return axios.put(`https://shuvo-blog.herokuapp.com/api/${articleID}/`, {
                     title: this.state.title,
                     content: this.state.content,
                     userName: this.state.userName,
                     userToken: this.state.userToken,
                     postID: this.state.postID
                 })
-                    .then(res =>  console.log(res));
-                    
+                    .then(res => console.log(res));
+
             default:
-                
+
         }
-       
+
 
 
     }
     render() {
-      
+
         return (
-            <div onLoad = { this.initialize1}>
+            <div onLoad={this.initialize1}>
                 <Form onSubmitCapture={(event) => this.handleFormSubmit(
                     event,
                     this.props.requestType,

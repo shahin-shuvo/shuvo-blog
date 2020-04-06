@@ -46,7 +46,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart);
-        axios.post('https://shuvo-portal.herokuapp.com/rest-auth/login/', {
+        axios.post('https://shuvo-blog.herokuapp.com/rest-auth/login/', {
             username: username,
             password: password
         })
@@ -66,7 +66,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart);
-        axios.post('https://shuvo-portal.herokuapp.com/registration/', {
+        axios.post('https://shuvo-blog.herokuapp.com/registration/', {
             username: username,
             email: email,
             password1: password1,
@@ -80,7 +80,7 @@ export const authSignup = (username, email, password1, password2) => {
                 localStorage.setItem('expirationDate', expirationDate);
                 dispatch(authSuccess(token));
                 dispatch(checkAuthTimeout(3600));
-                axios.post('https://shuvo-portal.herokuapp.com/user/', {
+                axios.post('https://shuvo-blog.herokuapp.com/user/', {
                     username: username,
                     email: email,
                     password: password1,

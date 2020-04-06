@@ -25,7 +25,7 @@ function CreateArea(props) {
     }
 
     function submitNote(event) {
-        axios.post('https://shuvo-portal.herokuapp.com/api/', {
+        axios.post('https://shuvo-blog.herokuapp.com/api/', {
             title: note.title,
             content: note.content,
             userName: note.userName,

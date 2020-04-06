@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {  Alert, Typography } from 'antd'
+import { Alert, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 
 import Article from "../components/Article"
@@ -15,7 +15,7 @@ class ArticleList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://shuvo-portal.herokuapp.com/api/')
+        axios.get('https://shuvo-blog.herokuapp.com/api/')
             .then(res => {
                 this.setState({
                     articles: res.data
@@ -23,15 +23,15 @@ class ArticleList extends React.Component {
             })
     }
 
-    handleChange= () => {
-        
+    handleChange = () => {
+
     }
 
     render() {
         let isLoggedin = localStorage.getItem('token')
         if (!isLoggedin) {
             return (
-                <div class="alert alert-danger" role="alert" style={{ fontSize: "1rem" ,  textAlign: "center" }}>
+                <div class="alert alert-danger" role="alert" style={{ fontSize: "1rem", textAlign: "center" }}>
 
                     <Alert
                         message="Warning"

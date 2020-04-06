@@ -18,7 +18,7 @@ class Profile extends React.Component {
 
     componentDidMount() {
         const token = localStorage.getItem('token');
-        axios.get(`https://shuvo-portal.herokuapp.com/myprofile/${token}/`)
+        axios.get(`https://shuvo-blog.herokuapp.com/myprofile/${token}/`)
             .then(res => {
                 this.setState({
                     articles: res.data
@@ -26,7 +26,7 @@ class Profile extends React.Component {
                 console.log("article", this.state.articles)
             })
 
-        axios.get(`https://shuvo-portal.herokuapp.com/myprofile/user/${token}/`)
+        axios.get(`https://shuvo-blog.herokuapp.com/myprofile/user/${token}/`)
             .then(result => {
                 this.setState({
                     userdata: result.data[0]

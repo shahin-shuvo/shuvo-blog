@@ -25,7 +25,7 @@ SECRET_KEY = '#$n_f6@+zkcyjv%72rei9&8zup5-@@0yw6q+e6*6q50w6dm)q+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shuvo-portal.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['shuvo-blog.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -131,7 +131,7 @@ USE_L10N = True
 USE_TZ = True
 
 CORS_ORIGIN_WHITELIST = ('http://localhose:8000',
-                         'http://localhost:3000', 'https://shuvo-portal.herokuapp.com')
+                         'http://localhost:3000', 'https://shuvo-blog.herokuapp.com')
 
 
 # Static files (CSS, JavaScript, Images)
