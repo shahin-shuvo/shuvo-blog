@@ -31,17 +31,19 @@ function CreateArea(props) {
             userName: note.userName,
             userToken: note.userToken,
             postID: note.userToken + note.postID
-        })
-            
-        
+        }).then(
+            window.location.reload(false)
+        )
+
+
 
         setNote({
             title: "",
             content: ""
         });
         changeExpanded(false);
-       // window.location.reload(false)
-       
+
+
     }
 
     return (
