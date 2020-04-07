@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Card, Button } from 'antd'
+import { Card, Button, Alert } from 'antd'
 import ArticleForm from "../components/ArticleForm"
 import Form from 'antd/lib/form/Form'
 
@@ -24,9 +24,9 @@ class ArticleDetail extends React.Component {
 
     handleDelete = (event) => {
         const articleID = this.props.match.params.articleID;
-        axios.delete(`https://shuvo-blog.herokuapp.com/api/${articleID}/`)
-        this.props.history.push('/')
-        window.location.reload(false)
+        axios.delete(`https://shuvo-blog.herokuapp.com/api/${articleID}/`).then(res => {
+            window.location.reload(true)
+        })
 
     }
     render() {
@@ -48,6 +48,15 @@ class ArticleDetail extends React.Component {
                         <Form onSubmitCapture={this.handleDelete}>
                             <Button type="danger" htmlType="submit">Delete</Button>
                         </Form>
+                    </div>
+                }{!this.state.article.userToken &&
+                    <Alert message="Informational Notes" description="Deleted ths post" type="info" showIcon />
+
+                }
+                {((localStorage.getItem('token') != this.state.article.userToken) && this.state.article.userToken) &&
+                    <div style={{ marginTop: "10px" }}>
+                        <Alert message="Informational Notes" description="You are not owner of this post. You can't modify or delete this post." type="error" showIcon />
+
                     </div>
                 }
             </div>

@@ -99,6 +99,8 @@ class RegistrationForm extends React.Component {
                             name="username"
                             onChange={this.handleUsernameChange}
                             value={this.state.username}
+                            pattern="^[a-zA-Z0-9]*$"
+                            title = "Alpha Numeric whitout space"
 
                         />
 

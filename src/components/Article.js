@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { List, Avatar, Typography } from 'antd';
-import {  CommentOutlined } from '@ant-design/icons';
+import { CommentOutlined } from '@ant-design/icons';
 const { Text } = Typography;
 
 const IconText = ({ icon, text }) => (
@@ -14,6 +14,8 @@ const IconText = ({ icon, text }) => (
 
 
 const Article = (prpos) => {
+
+
 
     return (
 
@@ -36,7 +38,7 @@ const Article = (prpos) => {
                         <List.Item
                             key={item.title}
                             actions={[
-                                <div style = {{fontSize: "1.5rem"}}>
+                                <div style={{ fontSize: "1.5rem" }}>
                                     <Text code strong >
                                         <IconText icon={CommentOutlined} text="" key="list-vertical-message" />
                                     </Text>
@@ -44,6 +46,13 @@ const Article = (prpos) => {
 
                             ]}
                         >
+                            <a href={`/articles/${item.id}/`}>
+                                <Avatar style={{ float: "right", color: "black" }} size={32}>
+                                    More
+                                </Avatar>
+
+                            </a>
+
                             <List.Item.Meta
                                 avatar={<Avatar size={40}
                                     style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
@@ -53,7 +62,7 @@ const Article = (prpos) => {
                                 title={item.userName}
 
                                 description={<a href={`/articles/${item.id}/`}>
-                                    <p style = {{fontSize:"1.5rem"}}><Text code type="danger">{item.title}</Text></p>
+                                    <p style={{ fontSize: "1.5rem" }}><Text code type="danger">{item.title}</Text></p>
                                 </a>}
                             />
                             {item.content}

@@ -31,16 +31,19 @@ class ArticleList extends React.Component {
         let isLoggedin = localStorage.getItem('token')
         if (!isLoggedin) {
             return (
-                <div class="alert alert-danger" role="alert" style={{ fontSize: "1rem", textAlign: "center" }}>
+                <div>
+                    <div class="alert alert-danger" role="alert" style={{ fontSize: "1rem", textAlign: "center" }}>
 
-                    <Alert
-                        message="Warning"
+                        <Alert
+                            message="Warning"
 
-                        type="warning"
-                        showIcon
-                    />
-                 Please <Link to="/login/"> <Text mark code>Login</Text></Link> or
-                    <Link to="/signup/"> <Text code type="warning">Signup</Text></Link> first!
+                            type="warning"
+                            showIcon
+                        />
+                 Please <Link to="/login/"> <Text type="danger" code style={{fontSize:"1.5rem"}}>Login</Text></Link> or
+                    <Link to="/signup/"> <Text code type="warning" style={{fontSize:"1.5rem"}}>Signup</Text></Link> to write your post.
+                </div> 
+                    <Article data={this.state.articles} />
                 </div>
             );
         }

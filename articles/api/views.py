@@ -10,8 +10,7 @@ from rest_framework.decorators import api_view
 
 class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
-    queryset = Article.objects.all()
-
+    queryset = Article.objects.order_by('-id')
 
 def profileView(request, token):
     queryset = Article.objects.filter(userToken=token)
