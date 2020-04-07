@@ -9,13 +9,11 @@ from django.utils import timezone
 
 
 class Article(models.Model):
-    
     title = models.CharField(max_length=120)
     content = models.TextField()
     userName = models.CharField(max_length=120)
     userToken = models.CharField(max_length=520)
     postID = models.CharField(max_length=520)
-    creationTime = models.DateTimeField()
     def __str__(self):
         return self.title
 

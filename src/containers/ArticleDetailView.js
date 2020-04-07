@@ -53,7 +53,7 @@ class ArticleDetail extends React.Component {
                     <Alert message="Informational Notes" description="Deleted ths post" type="info" showIcon />
 
                 }
-                {((localStorage.getItem('token') != this.state.article.userToken) && this.state.article.userToken) &&
+                {((localStorage.getItem('token') !== this.state.article.userToken) && this.state.article.userToken) &&
                     <div style={{ marginTop: "10px" }}>
                         <Alert message="Informational Notes" description="You are not owner of this post. You can't modify or delete this post." type="error" showIcon />
 

@@ -40,7 +40,7 @@ function CreateArea(props) {
             content: ""
         });
         changeExpanded(false);
-        window.location.reload(false)
+       // window.location.reload(false)
        
     }
 
