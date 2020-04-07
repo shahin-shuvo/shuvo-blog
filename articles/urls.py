@@ -7,7 +7,9 @@ urlpatterns = [
 
     # /profileView
     path('<token>/', views.ProfileListView.as_view()),
-    # /profileView
-    #path('user/', views.ProfileListView.as_view()),
+    
+    path('comment/create/', views.CommentCreateView.as_view()),
+
+    path('comment/<postid>/', views.CommentRetriveView.as_view()),
 
 ]

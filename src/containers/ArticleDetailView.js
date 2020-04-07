@@ -24,9 +24,10 @@ class ArticleDetail extends React.Component {
 
     handleDelete = (event) => {
         const articleID = this.props.match.params.articleID;
-        axios.delete(`https://shuvo-blog.herokuapp.com/api/${articleID}/`).then(res => {
-            window.location.reload(true)
-        })
+        axios.delete(`https://shuvo-blog.herokuapp.com/api/${articleID}/`)
+            .then(res => {
+                window.location.reload(true)
+            })
 
     }
     render() {

@@ -30,7 +30,7 @@ function CreateArea(props) {
             content: note.content,
             userName: note.userName,
             userToken: note.userToken,
-            postID: note.userToken + note.postID
+            postID: note.postID
         }).then(
             window.location.reload(false)
         )

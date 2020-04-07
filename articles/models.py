@@ -25,3 +25,12 @@ class UserData(models.Model):
     token = models.CharField(max_length=520)
     def __str__(self):
         return self.userName
+
+class Comment(models.Model):
+    comment = models.TextField()
+    postID = models.CharField(max_length=520)
+    userToken = models.CharField(max_length=520)
+    userName = models.CharField(max_length=120)
+    commentID = models.CharField( default="null",max_length=120)
+    def __str__(self):
+        return self.commentID

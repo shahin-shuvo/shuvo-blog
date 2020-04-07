@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/', include('articles.api.urls')),
     path('user/', include('articles.user.urls')),
     path('myprofile/', include('articles.profile.urls')),
+    path('articles/', include('articles.urls')),
     re_path('.*', TemplateView.as_view(template_name='index.html')),
 
 

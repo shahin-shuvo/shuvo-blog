@@ -37,35 +37,36 @@ const Article = (prpos) => {
                     <div className="card post-div" style={{ marginBottom: "10px", backgroundColor: "#E9F7EF" }}>
                         <List.Item
                             key={item.title}
+                       
                             actions={[
-                                <div style={{ fontSize: "1.5rem" }}>
-                                    <Text code strong >
-                                        <IconText icon={CommentOutlined} text="" key="list-vertical-message" />
-                                    </Text>
-                                </div>
+                            <div class="ui">
+                                <a class="active teal item" href={`/articles/comment/${item.id}/`}>
+                                <i class="comment icon"></i>See comments
+                                </a>
+                            </div>
 
-                            ]}
+                        ]}
                         >
-                            <a href={`/articles/${item.id}/`}>
-                                <Avatar style={{ float: "right", color: "black" }} size={32}>
-                                    More
+                        <a href={`/articles/${item.id}/`}>
+                            <Avatar style={{ float: "right", color: "black" }} size={32}>
+                                More
                                 </Avatar>
 
-                            </a>
+                        </a>
 
-                            <List.Item.Meta
-                                avatar={<Avatar size={40}
-                                    style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
-                                    {((item.userName || "").substring(0, 2) || "").toUpperCase()}
-                                </Avatar>}
+                        <List.Item.Meta
+                            avatar={<Avatar size={40}
+                                style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                                {((item.userName || "").substring(0, 2) || "").toUpperCase()}
+                            </Avatar>}
 
-                                title={item.userName}
+                            title={item.userName}
 
-                                description={<a href={`/articles/${item.id}/`}>
-                                    <p style={{ fontSize: "1.5rem" }}><Text code type="danger">{item.title}</Text></p>
-                                </a>}
-                            />
-                            {item.content}
+                            description={<a href={`/articles/${item.id}/`}>
+                                <p style={{ fontSize: "1.5rem" }}><Text code type="danger">{item.title}</Text></p>
+                            </a>}
+                        />
+                        {item.content}
                         </List.Item>
                     </div>
                 )}

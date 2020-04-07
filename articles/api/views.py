@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .serializers import ArticleSerializer
-from articles.models import Article
+from articles.models import Article, Comment
 
 from django.http import HttpResponse
 from rest_framework.response import Response
@@ -15,6 +15,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
 def profileView(request, token):
     queryset = Article.objects.filter(userToken=token)
     return queryset
+
 
 
 # from rest_framework.generics import (ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView, UpdateAPIView)
