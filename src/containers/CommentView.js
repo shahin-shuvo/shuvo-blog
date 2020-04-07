@@ -23,9 +23,9 @@ class CommentView extends React.Component {
                 });
 
                 axios.get(`https://shuvo-blog.herokuapp.com/articles/comment/${this.state.article.postID}/`)
-                    .then(res => {
+                    .then(result => {
                         this.setState({
-                            comments: res.data
+                            comments: result.data
 
                         });
                         console.log(this.state.comments)
