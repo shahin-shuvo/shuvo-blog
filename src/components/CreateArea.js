@@ -31,9 +31,9 @@ function CreateArea(props) {
             userName: note.userName,
             userToken: note.userToken,
             postID: note.userToken + note.postID
-        }).then(res=>{
-            window.location.reload(true);
-        })
+        }).then(
+            window.location.reload(true)
+        )
 
         setNote({
             title: "",
