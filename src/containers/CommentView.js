@@ -22,7 +22,7 @@ class CommentView extends React.Component {
 
                 });
 
-                axios.get(`https://shuvo-blog.herokuapp.com/articles/comment/${this.state.article.postID}/`)
+                axios.get(`https://shuvo-blog.herokuapp.com/articles/article_comment/${this.state.article.postID}/`)
                     .then(result => {
                         this.setState({
                             comments: result.data
@@ -41,7 +41,7 @@ class CommentView extends React.Component {
         });
     }
     submitComment = () => {
-        axios.post('https://shuvo-blog.herokuapp.com/articles/comment/create/', {
+        axios.post('https://shuvo-blog.herokuapp.com/articles/article_comment/create/', {
             comment: this.state.commentText,
             postID: this.state.article.postID,
             userToken: localStorage.getItem('token'),
