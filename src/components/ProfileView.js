@@ -38,9 +38,7 @@ function ProfileView(props) {
                                                 <li class="nav-item">
                                                     <a class="nav-link active" href="#profile" role="tab" data-toggle="tab"><i class="fas fa-user-circle"></i> Personal Informatión</a>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="#buzz" role="tab" data-toggle="tab"><i class="fas fa-info-circle"></i> Portal Informatión</a>
-                                                </li>
+                                              
                                             </ul>
 
 
@@ -71,18 +69,16 @@ function ProfileView(props) {
                                                             <p>{props.user.token}</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane fade" id="buzz">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
+                                                    <div class = "row">
+                                                    <div class="col-md-6">
                                                             <label>Total Post</label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <p>{props.totalPost}</p>
                                                         </div>
-                                                    </div>
-
+                                                        </div>
                                                 </div>
+                                               
 
                                             </div>
 
