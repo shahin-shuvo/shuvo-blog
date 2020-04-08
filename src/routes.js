@@ -7,6 +7,7 @@ import Login from "./containers/Login"
 import Signup from "./containers/Signup"
 import Profile from "./containers/Profile"
 import CommentView from "./containers/CommentView"
+import Covid19 from "./containers/Covid19"
 
 
 const BaseRouter = () => (
@@ -17,6 +18,7 @@ const BaseRouter = () => (
         <Route exact path='/login/' component={Login} />
         <Route exact path='/signup/' component={Signup} />
         <Route exact path='/profile/' component={Profile} />
+        <Route exact path='/covid-19/' component={Covid19} />
     </div>
 );
 

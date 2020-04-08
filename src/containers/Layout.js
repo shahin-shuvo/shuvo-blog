@@ -32,6 +32,9 @@ class CustomLayout extends React.Component {
                         <Menu.Item key="1" onClick={() => this.changeSelected('1')}>
                             <Link to="/">Portal</Link>
                         </Menu.Item>
+                        <Menu.Item key="4" onClick={() => this.changeSelected('4')}>
+                            <Link to="/covid-19/">COVID-19</Link>
+                        </Menu.Item>
 
                         {
                             this.props.isAuthenticated ?
