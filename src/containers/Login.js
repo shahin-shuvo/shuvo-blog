@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Form, Input, Button, Spin } from 'antd';
+import { Form, Input, Spin } from 'antd';
 import { UserOutlined, LockOutlined, LoadingOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 import * as actions from '../store/actions/auth'
+import { Message, Button } from 'semantic-ui-react'
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
@@ -22,11 +23,14 @@ class NormalLoginForm extends React.Component {
 
     handleUsernameChange = (evt) => {
         this.setState({ username: evt.target.value });
+
     }
 
     handlePasswordChange = (evt) => {
         this.setState({ password: evt.target.value });
     }
+
+  
 
     handleSubmit = (event) => {
         if (this.state.username === "" || this.state.password === "") {
@@ -34,8 +38,6 @@ class NormalLoginForm extends React.Component {
         }
         else {
             this.props.onAuth(event.target.username.value, event.target.password.value)
-            this.props.history.push('/')
-            //window.location.reload(true)
         }
 
 
@@ -43,26 +45,35 @@ class NormalLoginForm extends React.Component {
 
 
     render() {
+        if (localStorage.getItem('token')) {
+            this.props.history.push('/')
+        }
 
         let errorMessage = null;
         if (this.props.error) {
             errorMessage = (
-                <p>{this.props.error.message}</p>
+                <div>
+
+                    <p>{this.props.error.message}</p>
+                    <Message style={{ marginTop: "5px", marginBottom: "5px" }}
+                        success
+                        icon='warning'
+                        header='Unexpected Error!'
+                        list={["Your username may be wrong!", "Your password be wrong"]}
+                    />
+                </div>
             );
+
         }
 
 
         return (
 
-            <div className = "signup-div">
-                 <div className="heading">
+            <div className="signup-div">
+                <div className="heading">
                     <h1>Login</h1>
                 </div>
-                {this.state.errorMessage &&
-                    <div class="alert alert-danger" role="alert">
-                        {this.state.errorMessage}
-                    </div>
-                }
+
                 {errorMessage}
                 {
 
@@ -113,11 +124,13 @@ class NormalLoginForm extends React.Component {
 
 
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" className="login-form-button">
-                                    Log in
-                                </Button>
-                                <NavLink to="/signup/" style={{ marginLeft: '10px' }}>
-                                    Register now!</NavLink>
+
+                                <Button.Group>
+                                    <Button secondary htmlType="submit">Login</Button>
+                                    <Button.Or />
+                                    <Button href="/signup/" positive>Register</Button>
+                                </Button.Group>
+
                             </Form.Item>
                         </Form>
                 }

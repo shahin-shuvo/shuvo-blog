@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Input, Button, Alert } from 'antd';
-
+import { Form, Input, Alert } from 'antd';
+import { Message, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
@@ -22,6 +22,9 @@ class RegistrationForm extends React.Component {
     }
     handleUsernameChange = (evt) => {
         this.setState({ username: evt.target.value });
+        if (localStorage.getItem('token')) {
+            this.props.history.push('/')
+        }
     }
     handleEmailChange = (evt) => {
         this.setState({ email: evt.target.value });
@@ -54,32 +57,40 @@ class RegistrationForm extends React.Component {
                 event.target.password2.value
 
             )
-            this.props.history.push('/')
         }
-
-
-
     }
 
 
     render() {
+
+        let errorMessage = null;
+        if (this.props.error) {
+            errorMessage = (
+                <div>
+
+                    <p>{this.props.error.message}</p>
+                    <Message style={{ marginTop: "5px", marginBottom: "5px" }}
+                        success
+                        icon='warning'
+                        header='Unexpected Error!'
+                        list={["Username may already exist!", "Email may have been used already!"]}
+                    />
+                </div>
+            );
+
+        }
+        if (localStorage.getItem('token')) {
+            this.props.history.push('/')
+        }
 
         return (
             <div className="signup-div">
                 <div className="heading">
                     <h1>Create a Account</h1>
                 </div>
-                {this.state.errorMessage &&
-                    <div style={{ marginBottom: "10px" }}>
-                        <Alert
-                            message="Error"
-                            description={this.state.errorMessage}
-                            type="error"
-                            showIcon
-                        />
-                    </div>
 
-                }
+
+                {errorMessage}
                 <Form onSubmitCapture={this.handleSubmit}>
 
                     <Form.Item
@@ -98,8 +109,8 @@ class RegistrationForm extends React.Component {
                             name="username"
                             onChange={this.handleUsernameChange}
                             value={this.state.username}
-                            pattern="^[a-zA-Z0-9]*$"
-                            title = "Alpha Numeric whitout space"
+                            pattern="^[a-zA-Z0-9.\-_$@*!]{5,30}$"
+                            title="Alpha Numeric whitout space & Minimum 5 character."
 
                         />
 
@@ -190,14 +201,13 @@ class RegistrationForm extends React.Component {
                         />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" style={{ marginRight: '10px' }}>
-                            Signup
-                    </Button>
-                    Or
-                    <NavLink
-                            style={{ marginRight: '10px' }}
-                            to='/login/'> Login
-                    </NavLink>
+
+                        <Button.Group>
+                            <Button secondary htmlType="submit" >Register</Button>
+                            <Button.Or />
+                            <Button href="/login/" positive>Login</Button>
+                        </Button.Group>
+
                     </Form.Item>
 
                 </Form>

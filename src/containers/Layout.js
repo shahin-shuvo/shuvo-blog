@@ -23,7 +23,7 @@ class CustomLayout extends React.Component {
                         margin: "5px 5px 5px 5px",
                         float: "left"
                     }}>
-                        <Avatar size={40} shape={"square"} style={{ color: "black", fontFamily: "'Lobster', cursive", fontSize: "2rem" }}>S</Avatar>
+                        <Avatar shape={"square"} style={{ color: "black", fontFamily: "'Lobster', cursive", fontSize: "2rem" }}>S</Avatar>
                     </div>
 
                     <Menu theme="dark" mode="horizontal"

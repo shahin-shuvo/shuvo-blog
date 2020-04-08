@@ -29,8 +29,6 @@ export const logout = () => {
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
-    localStorage.removeItem('authResponseName');
-    localStorage.removeItem('authResponseEmail');
     return {
         type: actionTypes.AUTH_LOGOUT,
 
@@ -59,15 +57,14 @@ export const authLogin = (username, password) => {
                 localStorage.setItem('token', token);
                 localStorage.setItem('username', username);
                 localStorage.setItem('expirationDate', expirationDate);
+
                 dispatch(authSuccess(token));
                 dispatch(checkAuthTimeout(3600));
-                localStorage.removeItem('authResponseName');
-                localStorage.removeItem('authResponseEmail');
 
             })
             .catch(error => {
-                localStorage.setItem('authResponseName', error.response.data.username);
-                localStorage.setItem('authResponseEmail', error.response.data.email)
+                dispatch(authFail(error))
+                
             })
     }
 }
@@ -96,24 +93,14 @@ export const authSignup = (username, email, password1, password2) => {
                     token: localStorage.getItem('token')
                 })
                     .catch(error => {
-                        localStorage.setItem('authResponseName', error.data.username);
-                        localStorage.setItem('authResponseEmail', error.data.email)
+                         dispatch(authFail(error))
                     })
-                    .then(res => {
-                        localStorage.removeItem('authResponseName');
-                        localStorage.removeItem('authResponseEmail');
-                    })
+                   
 
 
-            })
-            .then(response => {
-                localStorage.removeItem('authResponseName');
-                localStorage.removeItem('authResponseEmail');
             })
             .catch(error => {
-                console.log(error.response.data.username)
-                localStorage.setItem('authResponseName', error.response.data.username);
-                localStorage.setItem('authResponseEmail', error.response.data.email)
+                dispatch(authFail(error))
             })
 
 
