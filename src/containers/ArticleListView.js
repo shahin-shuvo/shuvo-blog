@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Alert, Typography } from 'antd'
 import { Link } from 'react-router-dom'
-
+import { Message } from 'semantic-ui-react'
 import Article from "../components/Article"
 import CreateArea from "../components/CreateArea"
 
@@ -40,15 +40,29 @@ class ArticleList extends React.Component {
                             type="warning"
                             showIcon
                         />
-                 Please <Link to="/login/"> <Text type="danger" code style={{fontSize:"1.5rem"}}>Login</Text></Link> or
-                    <Link to="/signup/"> <Text code type="warning" style={{fontSize:"1.5rem"}}>Signup</Text></Link> to write your post.
-                </div> 
+                 Please <Link to="/login/"> <Text type="danger" code style={{ fontSize: "1.5rem" }}>Login</Text></Link> or
+                    <Link to="/signup/"> <Text code type="warning" style={{ fontSize: "1.5rem" }}>Signup</Text></Link> to write your post.
+                </div>
+                    {(localStorage.getItem('authResponseName') ||
+                        localStorage.getItem('authResponseEmail')) &&
+                        <Message
+                            success
+                            icon='inbox'
+                            header='Unexpected Error! Please check your input again!'
+                            list={[localStorage.getItem('authResponseName'), localStorage.getItem('authResponseEmail')]}
+                        />
+                    }
+
                     <Article data={this.state.articles} />
                 </div>
             );
         }
         return (
             <div>
+
+                {localStorage.removeItem('authResponseName')}
+                {localStorage.removeItem('authResponseEmail')}
+
                 <CreateArea />
                 <Article data={this.state.articles} />
                 <br />

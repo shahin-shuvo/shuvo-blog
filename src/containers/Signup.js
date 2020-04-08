@@ -55,7 +55,6 @@ class RegistrationForm extends React.Component {
 
             )
             this.props.history.push('/')
-
         }
 
 

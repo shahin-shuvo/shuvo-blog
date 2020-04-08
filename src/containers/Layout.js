@@ -16,14 +16,19 @@ class CustomLayout extends React.Component {
 
         return (
             <Layout>
-                <Avatar  shape="square" size={64}  style={{ color: 'black', backgroundColor: 'white' }}>S</Avatar>
                 <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-                    
+                    <div className="logo" style={{
+                        width: "50px",
+                        height: "50px",
+                        margin: "5px 5px 5px 5px",
+                        float: "left"
+                    }}>
+                        <Avatar size={40} shape={"square"} style={{ color: "black", fontFamily: "'Lobster', cursive", fontSize: "2rem" }}>S</Avatar>
+                    </div>
+
                     <Menu theme="dark" mode="horizontal"
                         defaultSelectedKeys={[localStorage.getItem('key')]}>
-                        <Menu.Item disabled>
-                            <Avatar size={40} shape = {"square"} style ={{color: "black", fontFamily:"'Lobster', cursive", fontSize:"2rem"}}>S</Avatar>
-                        </Menu.Item>
+
                         <Menu.Item key="1" onClick={() => this.changeSelected('1')}>
                             <Link to="/">Portal</Link>
                         </Menu.Item>
