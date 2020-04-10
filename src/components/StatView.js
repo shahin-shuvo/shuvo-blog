@@ -13,8 +13,8 @@ export default function StatView(props) {
     return (
         <div >
             <div class="ui card" style={{ width: " 100%" }}>
-                <div class="content"  style = {{background: "#81c784"}}>
-                    <div class="header" >
+                <div class="content" style={{background: "#0a0f3c", color: "white"}}>
+                    <div class="header" style={{background: "#0a0f3c", color: "white"}}>
                         {props.header} Cases
                     </div>
                 </div>

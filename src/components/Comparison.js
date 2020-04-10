@@ -24,8 +24,8 @@ export default function CountrySelector() {
             <div className="row" style={{ marginTop: "10px" }}>
                 <div className="col">
                     <div class="ui card" style={{ width: " 100%" }}>
-                        <div class="content">
-                            <div class="header">
+                        <div class="content" style={{background: "#0a0f3c", color: "white"}}>
+                            <div class="header" style={{background: "#0a0f3c", color: "white"}}>
                                 Comparison of confirmed cases among several countries
                             </div>
                         </div>
