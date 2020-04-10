@@ -16,7 +16,9 @@ class CustomLayout extends React.Component {
 
         return (
             <Layout>
-                <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+                <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}
+                    breakpoint="md"
+                >
                     <div className="logo" style={{
                         width: "50px",
                         height: "50px",
@@ -79,7 +81,7 @@ class CustomLayout extends React.Component {
 
                 </Content>
 
-                <Footer style={{ textAlign: 'center' }}>Ant Design ©2020 Created by Shahin Shuvo</Footer>
+                <Footer style={{ textAlign: 'center' }}> Created 2020 © Shahin Shuvo</Footer>
             </Layout>
         );
     }

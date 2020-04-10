@@ -7,7 +7,7 @@ import Login from "./containers/Login"
 import Signup from "./containers/Signup"
 import Profile from "./containers/Profile"
 import CommentView from "./containers/CommentView"
-import Covid19 from "./containers/Covid19"
+import Covid19 from "./components/Covid19"
 
 
 const BaseRouter = () => (

@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-
 import Article from "../components/Article"
 
 import ProfileView from "../components/ProfileView"
@@ -41,10 +40,7 @@ class Profile extends React.Component {
         return (
             <div>
                 <ProfileView user={this.state.userdata} totalPost={this.state.articles.length} />
-                <div style={{ marginTop: "10px" }}>
-                    <Article data={this.state.articles} />
-                </div>
-
+                <Article data={this.state.articles} />
             </div>
 
         )

@@ -31,9 +31,13 @@ function CreateArea(props) {
             userName: note.userName,
             userToken: note.userToken,
             postID: note.postID
-        }).then(
+        }).then(res => {
             window.location.reload(false)
+        }
         )
+            .catch(
+                console.log("Errpr ............")
+            )
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { List, Avatar, Typography } from 'antd';
-import { CommentOutlined } from '@ant-design/icons';
+import { CommentOutlined, EditOutlined } from '@ant-design/icons';
 const { Text } = Typography;
 
 const IconText = ({ icon, text }) => (
@@ -47,10 +47,8 @@ const Article = (prpos) => {
 
                         ]}
                         >
-                        <a href={`/articles/${item.id}/`}>
-                            <Avatar style={{ float: "right", color: "black" }} size={32}>
-                                More
-                                </Avatar>
+                        <a href={`/articles/${item.id}/`} style = {{float: "right"}}>
+                            <EditOutlined />
 
                         </a>
 
@@ -63,7 +61,7 @@ const Article = (prpos) => {
                             title={item.userName}
 
                             description={<a href={`/articles/${item.id}/`}>
-                                <p style={{ fontSize: "1.5rem" }}><Text code type="danger">{item.title}</Text></p>
+                               <Text mark> {item.title}</Text>
                             </a>}
                         />
                         {item.content}

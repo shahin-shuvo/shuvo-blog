@@ -35,14 +35,14 @@ class ArticleList extends React.Component {
                         <Message warning>
                             <Message.Header>You must register or login before you can do post & comment!</Message.Header>
                             <p>
-                                <Button.Group>
-                                    <Button secondary htmlType="submit" href="/login/" >Login</Button>
-                                    <Button.Or />
-                                    <Button href="/signup/" positive>Register</Button>
-                                </Button.Group>
+
                             </p>
                         </Message>
-
+                        <Button.Group>
+                            <Button secondary htmlType="submit" href="/login/" >Login</Button>
+                            <Button.Or />
+                            <Button href="/signup/" positive>Register</Button>
+                        </Button.Group>
                     </div>
                     <Article data={this.state.articles} />
                 </div>
