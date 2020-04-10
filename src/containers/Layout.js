@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import { UserOutlined } from '@ant-design/icons';
 import { Layout, Menu, Breadcrumb } from 'antd';
@@ -7,13 +7,7 @@ import * as actions from '../store/actions/auth';
 import { Avatar } from 'antd';
 const { Header, Content, Footer } = Layout;
 class CustomLayout extends React.Component {
-
-    changeSelected = (key) => {
-        localStorage.setItem('key', key);
-        console.log(localStorage.getItem('key'))
-    }
     render() {
-
         return (
             <Layout>
                 <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}
@@ -29,12 +23,12 @@ class CustomLayout extends React.Component {
                     </div>
 
                     <Menu theme="dark" mode="horizontal"
-                        defaultSelectedKeys={4}>
+                        defaultSelectedKeys="4">
 
-                        <Menu.Item key="1" onClick={() => this.changeSelected('1')}>
+                        <Menu.Item key="1">
                             <Link to="/">Portal</Link>
                         </Menu.Item>
-                        <Menu.Item key="4" onClick={() => this.changeSelected('4')}>
+                        <Menu.Item key="4" >
                             <Link to="/covid-19/">COVID-19</Link>
                         </Menu.Item>
 
@@ -42,18 +36,18 @@ class CustomLayout extends React.Component {
                             this.props.isAuthenticated ?
 
                                 <Menu.Item key="2" onClick={this.props.logout}>
-                                    <Link to="/" onClick={() => this.changeSelected('1')}>Logout</Link>
+                                    <Link to="/" >Logout</Link>
                                 </Menu.Item>
 
                                 :
-                                <Menu.Item key="2" onClick={() => this.changeSelected('2')} >
+                                <Menu.Item key="2"   >
                                     <Link to="/login/">Login</Link>
                                 </Menu.Item>
 
                         }
                         {
                             this.props.isAuthenticated ?
-                                <Menu.Item key="3" onClick={() => this.changeSelected('3')}>
+                                <Menu.Item key="3">
                                     <Link to="/profile/"><UserOutlined />{localStorage.getItem('username')}</Link>
                                 </Menu.Item>
 

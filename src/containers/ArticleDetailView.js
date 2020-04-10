@@ -31,7 +31,6 @@ class ArticleDetail extends React.Component {
 
     }
     render() {
-        localStorage.setItem('key', '1')
         return (
             <div >
                 <div className="post-div">
