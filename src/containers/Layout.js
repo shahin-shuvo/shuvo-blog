@@ -29,7 +29,7 @@ class CustomLayout extends React.Component {
                     </div>
 
                     <Menu theme="dark" mode="horizontal"
-                        defaultSelectedKeys={[localStorage.getItem('key')]}>
+                        defaultSelectedKeys={4}>
 
                         <Menu.Item key="1" onClick={() => this.changeSelected('1')}>
                             <Link to="/">Portal</Link>
