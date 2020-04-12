@@ -1,8 +1,7 @@
 import React from 'react';
-import { Form, Input, Alert } from 'antd';
+import { Form, Input } from 'antd';
 import { Message, Button } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import * as actions from '../store/actions/auth';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 

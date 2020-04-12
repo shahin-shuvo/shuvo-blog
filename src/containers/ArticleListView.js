@@ -1,8 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Alert, Typography } from 'antd'
-import { Link } from 'react-router-dom'
-import { Message, Segment, Header, Button } from 'semantic-ui-react'
+import { Message, Button } from 'semantic-ui-react'
 import Article from "../components/Article"
 import CreateArea from "../components/CreateArea"
 

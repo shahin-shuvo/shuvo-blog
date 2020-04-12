@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import fetchStat from "./StatFetch"
-import { Row, Col, Spin } from 'antd';
+import { Spin } from 'antd';
 
 
 export default function StatView(props) {

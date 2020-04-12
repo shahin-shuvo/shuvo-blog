@@ -1,17 +1,8 @@
 import React from 'react'
 
 import { List, Avatar, Typography } from 'antd';
-import { CommentOutlined, EditOutlined } from '@ant-design/icons';
+import { EditOutlined } from '@ant-design/icons';
 const { Text } = Typography;
-
-const IconText = ({ icon, text }) => (
-    <span>
-        {React.createElement(icon, { style: { marginRight: 8 } })}
-        {text}
-    </span>
-);
-
-
 
 const Article = (prpos) => {
 

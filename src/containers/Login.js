@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Input, Spin } from 'antd';
 import { UserOutlined, LockOutlined, LoadingOutlined } from '@ant-design/icons';
-import { NavLink } from 'react-router-dom';
 import * as actions from '../store/actions/auth'
 import { Message, Button } from 'semantic-ui-react'
 

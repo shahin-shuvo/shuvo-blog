@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import FetchChartData from "./FetchChartData"
 import { Line } from 'react-chartjs-2';
-import { Row, Col, Spin } from 'antd';
+import {  Spin } from 'antd';
 
 export default function Chart(props) {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Image, Item } from 'semantic-ui-react'
+import { Button, Card, Item } from 'semantic-ui-react'
 import { Avatar } from 'antd';
 
 function ProfileView(props) {

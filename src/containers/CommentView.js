@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Card, Alert } from 'antd'
+import { Card } from 'antd'
 import { Comment, Form, Button, Header, TextArea } from 'semantic-ui-react'
 import uuid from "uuid";
 import CommentItem from "../components/Comment"
