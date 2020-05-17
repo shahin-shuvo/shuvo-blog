@@ -78,7 +78,11 @@ class CustomLayout extends React.Component {
 
                 </Content>
 
-                <Footer style={{ textAlign: 'center' }}> Created 2020 © Shahin Shuvo</Footer>
+                <Footer style={{ textAlign: 'center' }}>
+                    
+                   Created 2020 © Shahin Shuvo | <a href="http://shuvo-site.herokuapp.com/" target="_blank">Portfolio Site</a>
+
+                 </Footer>
             </Layout>
         );
     }

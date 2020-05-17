@@ -30,9 +30,9 @@ const Article = (prpos) => {
                             key={item.title}
                        
                             actions={[
-                            <div class="ui">
-                                <a class="active teal item" href={`/articles/comment/${item.id}/`}>
-                                <i class="comment icon"></i>See comments
+                            <div className="ui">
+                                <a className="active teal item" href={`/articles/comment/${item.id}/`}>
+                                <i className="comment icon"></i>See comments
                                 </a>
                             </div>
 
